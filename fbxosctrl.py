@@ -159,7 +159,7 @@ its exposed REST API """
             if type(key) == unicode:
                 key = key.encode()
             # Hashing token with key
-            h = hmac.new(apptoken, key, sha1)
+            h = hmac.new(str(apptoken), key, sha1)
             password = h.hexdigest()
             url = self.fbxAddress + "/api/v1/login/session/"
             headers = {'Content-type': 'application/json',
